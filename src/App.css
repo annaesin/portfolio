@@ -73,6 +73,11 @@ a:hover {
   color: #9fffe6; 
 }
 
+strong {
+  color: #64ffda;
+}
+
+
 /* NAV BAR */
 .nav {
   position: sticky;

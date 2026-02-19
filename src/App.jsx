@@ -50,23 +50,20 @@ export default function App() {
               <span className="dot green" />
             </span>
           </div>
-          <p>Hi, I’m <strong>Annabel</strong>, a <strong>Computer Science new grad from Carleton University</strong> who enjoys turning ideas into clean, working software.
+          <p>I am a <strong>Computer Science new grad </strong> from <strong>Carleton University</strong> who enjoys building clean, reliable software and understanding how things work behind the scenes.
           </p>
 
           <p>
-            Lately I’ve been building with <strong>React, C#, and ASP.NET</strong>, diving deeper into backend systems and databases.
-            I also experiment with <strong>Python and AI tools</strong> when something sparks my curiosity. 
+            Lately I’ve been building with <strong>React</strong>, <strong>C#</strong>, and <strong>ASP.NET</strong>, diving deeper into backend systems and databases. I also experiment with <strong>Python</strong> and <strong>AI tools</strong> whenever something sparks my curiosity.
           </p>
           <p>
-            Fun fact: I minored in <strong>Psychology</strong> and studying how people think alongside how systems work definitely shapes how I approach problem solving and usability.
+            Fun fact: I minored in <strong>Psychology</strong>, which shapes how I think about usability, systems, and problem solving.
           </p>
-
           <p>
-            This portfolio is a <strong>live project</strong>, so if something looks a little off, I’m probably rebuilding it. 😆
+            This portfolio is a live project, so if something looks a little off, I’m probably rebuilding it. 😆
           </p>
-
           <p>
-            Outside of coding, you’ll catch me at concerts, reading, or still trying to finish One Piece (seriously, will I ever finish it?). 
+            Outside of coding, you’ll catch me at concerts, reading, or still trying to finish One Piece (seriously, will I ever finish it？) 
           </p>
 
           <p className="mt-4">
@@ -120,8 +117,8 @@ export default function App() {
               <h4>Product Content Developer - Ciena </h4>
               <p className="muted">May 2025 - Dec 2025</p>
               <ul>
-                <li>Developed structured documentation systems using DITA XML and AEM</li>
-                <li>Transformed product demos into AI ready technical guides </li>
+                <li>Developed structured documentation systems using <strong>DITA XML</strong> and <strong>AEM</strong></li>
+                <li>Transformed product demos into <strong>AI ready</strong> technical guides </li>
                 <li>Managed versioning and publishing workflows across multiple product teams </li>
                 <li>Supported documentation for multiple enterprise software releases</li>
               </ul>
@@ -137,10 +134,10 @@ export default function App() {
               <h4>Full Stack Developer - Royal Canadian Mounted Police</h4>
               <p className="muted">Sept 2023 - Aug 2024</p>
               <ul>
-                <li>Built internal ASP.NET applications used by operational teams</li>
-                <li>Designed and optimized SQL Server databases for secure data management</li>
-                <li>Implemented backend logic in C# supporting production level workflows</li>
-                <li>Improved usability using DevExpress components</li>
+                <li>Built internal <strong>ASP.NET</strong> applications used by operational teams</li>
+                <li>Designed and optimized <strong>SQL Server</strong> databases for secure data management</li>
+                <li>Implemented backend logic in <strong>C#</strong> supporting production level workflows</li>
+                <li>Improved usability using <strong>DevExpress</strong> components</li>
               </ul>
             </div>
           </div>
@@ -155,12 +152,13 @@ export default function App() {
             </div>
 
           <div className="experience-card"> 
-              <h4>Unified Support Centre Volunteer - Carleton University Students Association</h4>
+              <h4>Unified Support Centre Volunteer - Carleton University Students' Association</h4>
               <p className="muted">Nov 2022 - Present</p>
               <ul>
-              <li>Assembled emergency food and essentials hampers supporting students in urgent need</li>
-              <li>Conducted safe walk escorts to promote campus safety and student well being</li>
-              <li>Patrolled campus to increase visibility and awareness of support services</li>
+                <li>Support a <strong>student-funded</strong> service providing on campus food assistance and evening safety support to the <strong>Carleton community</strong></li>
+                <li>Assemble and distribute grocery hampers through the <strong>Food Centre</strong>, assisting students facing food insecurity</li>
+                <li>Conduct safe walk escorts through <strong>Foot Patrol</strong>, accompanying students on and off campus to promote safety and well being</li>
+                <li>Contribute to creating a supportive and accessible campus environment through direct peer based assistance</li>
             </ul>
           </div>
         </div>
