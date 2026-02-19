@@ -54,25 +54,23 @@ export default function App() {
           </p>
 
           <p>
-            Right now I’m leveling up in <strong>React</strong>, strengthening my foundations in <strong>C# and ASP.NET</strong>, and building stronger foundations in databases and backend systems. 
-            On the side, I’ve been exploring <strong>Python</strong> and AI tools just to see what I can build next.
+            Lately I’ve been building with <strong>React, C#, and ASP.NET</strong>, diving deeper into backend systems and databases.
+            I also experiment with <strong>Python and AI tools</strong> when something sparks my curiosity. 
+          </p>
+          <p>
+            Fun fact: I minored in <strong>Psychology</strong> and studying how people think alongside how systems work definitely shapes how I approach problem solving and usability.
           </p>
 
           <p>
-            Fun fact: I also minored in <strong>Psychology</strong>. Studying how people think alongside how systems work definitely shapes how I approach problem solving and usability.
+            This portfolio is a <strong>live project</strong>, so if something looks a little off, I’m probably rebuilding it. 😆
           </p>
 
           <p>
-            This portfolio is very much a <strong>live project</strong>, so if something looks a little off just consider it growth in real time. 😆
-          </p>
-
-          <p>
-            Outside of coding, you’ll catch me at concerts, reading, or trying to finish One Piece (seriously, will I ever finish it?). 
-            I’m also back into gaming lately, so my Nintendo Switch is finally getting the attention it deserves.
+            Outside of coding, you’ll catch me at concerts, reading, or still trying to finish One Piece (seriously, will I ever finish it?). 
           </p>
 
           <p className="mt-4">
-            📍 <strong>Based in Ottawa.</strong> Always happy to connect about tech, music, or cool ideas.
+            📍 <strong>Based in Ottawa.</strong> Always happy to connect.
           </p>
 
         </section>
