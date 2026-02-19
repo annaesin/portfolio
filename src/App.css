@@ -83,13 +83,38 @@ a:hover {
   z-index: 10;
 }
 
-.nav-inner {
+.nav-inner{
   max-width: 900px;
   margin: 0 auto;
   padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-links{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-icons{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-icons a{
+  color: #ccd6f6;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-icons a:hover{
+  opacity: 1;
+  color: #64ffda;
+  transform: translateY(-2px);
 }
 
 .home {
@@ -98,14 +123,13 @@ a:hover {
   color: #64ffda;
 }
 
-.links a {
-  color: #ccd6f6;
-  margin-left: 16px;
-  transition: color 0.2s ease;
-}
-
-.links a:hover {
-  color: #64ffda;
+@media (max-width: 700px){
+  .nav-links{
+    display: none;
+  }
+  .nav-inner{
+    padding: 10px 16px;
+  }
 }
 
 /* HERO SECTION */
@@ -292,12 +316,17 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 20px;
 }
 
-@media (max-width: 1000px) {
-  .projects-grid {
+@media (max-width: 1100px) {
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -307,28 +336,38 @@ a:hover {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
   min-height: 260px;
+
+  min-width: 0; 
+
   transition: transform 0.2s ease, border 0.2s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0px 10px 30px rgba(100,255,218,0.15);
+  box-shadow: 0px 10px 30px rgba(100, 255, 218, 0.15);
 }
 
 .project-card h4 {
   margin: 0;
   font-size: 20px;
+  overflow-wrap: normal;   
+  word-break: normal;
+  hyphens: none;
 }
 
 .project-card p {
   margin: 0;
   opacity: 0.85;
   line-height: 1.5;
+  overflow-wrap: normal;   
+  word-break: normal;
+  hyphens: none;
 }
 
 .project-top {
@@ -350,7 +389,7 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.muted { 
+.muted {
   color: #8892b0;
 }
 
@@ -360,4 +399,3 @@ a:hover {
   font-size: 14px;
   opacity: 0.75;
 }
-

@@ -11,13 +11,13 @@ export default function App() {
         <div className="nav-inner">
           <a className="home" href="#home">Annabel Esin</a>
 
-          <div className="links">
+          <div className="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
           </div>
-             <div className="links">
+             <div className="nav-icons">
              <a  href="mailto:annabelesin@gmail.com"><FaEnvelope size={20}/></a>
              <a  href="https://www.linkedin.com/in/annabelesin/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={20}/></a>
              <a  href="https://www.github.com/annaesin" target="_blank" rel="noopener noreferrer"><FaGithub size={20}/></a>
@@ -179,7 +179,7 @@ export default function App() {
             <div className="project-card">
               <div className="project-top">
                 <a
-                  href="https://github.com/annaesin"
+                  href="https://github.com/annaesin/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-link"
