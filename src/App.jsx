@@ -50,28 +50,31 @@ export default function App() {
               <span className="dot green" />
             </span>
           </div>
-          <p>
-            Hi, I’m <strong>Annabel</strong>, a Computer Science student and web developer who enjoys turning ideas
-            into clean, working products.
+          <p>Hi, I’m <strong>Annabel</strong>, a <strong>Computer Science new grad from Carleton University</strong> who enjoys turning ideas into clean, working software.
           </p>
 
           <p>
-            Right now I’m leveling up in React, strengthening my foundations in C# and ASP.NET, and building more confidence with databases and backend concepts. 
-            On the side, I’ve been exploring Python scripting and AI tools just to see what I can build next.
+            Right now I’m leveling up in <strong>React</strong>, strengthening my foundations in <strong>C# and ASP.NET</strong>, and building stronger foundations in databases and backend systems. 
+            On the side, I’ve been exploring <strong>Python</strong> and AI tools just to see what I can build next.
           </p>
 
           <p>
-            This portfolio is still a work in progress, so if something looks a little off just consider it a live experiment. 😆
+            Fun fact: I also minored in <strong>Psychology</strong>. Studying how people think alongside how systems work definitely shapes how I approach problem solving and usability.
           </p>
 
           <p>
-            Outside of coding, you’ll catch me at concerts, reading, or trying to finish One Piece (seriously, will I ever finish it?).
-            I’m also back into gaming lately, and my Nintendo Switch is no longer collecting dust.
+            This portfolio is very much a <strong>live project</strong>, so if something looks a little off just consider it growth in real time. 😆
+          </p>
+
+          <p>
+            Outside of coding, you’ll catch me at concerts, reading, or trying to finish One Piece (seriously, will I ever finish it?). 
+            I’m also back into gaming lately, so my Nintendo Switch is finally getting the attention it deserves.
           </p>
 
           <p className="mt-4">
             📍 <strong>Based in Ottawa.</strong> Always happy to connect about tech, music, or cool ideas.
           </p>
+
         </section>
 
         <section id="skills" className="content">
@@ -227,6 +230,19 @@ export default function App() {
         </section>
 
       </main>
+
+      <footer className="footer">
+        <p>
+          Built and designed by <strong>Annabel Esin</strong>.
+        </p>
+        <p>
+          All rights reserved. © {new Date().getFullYear()}
+        </p>
+      </footer>
+
     </div>
+    
+    
   );
 }
+

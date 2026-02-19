@@ -399,3 +399,20 @@ a:hover {
   font-size: 14px;
   opacity: 0.75;
 }
+
+.footer {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #8892b0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer strong {
+  color: #64ffda;
+}
+
+.footer p {
+  margin: 6px 0;
+}
