@@ -107,11 +107,13 @@ export default function App() {
           <h3>Work Experience</h3>
           <div className="experience-grid">
             <div className="experience-logo">
-              <img
-                    className="avatar"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
-                    alt="Ciena logo"
-                />  
+              <a href="https://www.ciena.com/" target="_blank" rel="noopener noreferrer">
+                <img
+                      className="avatar"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
+                      alt="Ciena logo"
+                  />  
+              </a>
             </div>
             <div className="experience-card">            
               <h4>Product Content Developer - Ciena </h4>
@@ -124,11 +126,13 @@ export default function App() {
               </ul>
             </div>
             <div className="experience-logo">
+              <a href="https://www.rcmp-grc.gc.ca/en" target="_blank" rel="noopener noreferrer">
                 <img
                     className="avatar"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg/250px-Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg.png"
                     alt="RCMP logo"
-                />  
+                />
+              </a>  
             </div>
             <div className="experience-card">           
               <h4>Full Stack Developer - Royal Canadian Mounted Police</h4>
@@ -144,11 +148,13 @@ export default function App() {
           <h3>Volunteer Experience</h3>
           <div className="experience-grid">
             <div className="experience-logo">
-              <img
-                    className="avatar"
-                    src="https://carleton.ca/webservices/wp-content/uploads/sites/3/logo-th.jpg"
-                    alt="Carleton University Logo"   
-                />  
+              <a href="https://unifiedsupportcentre.ca/" target="_blank" rel="noopener noreferrer">
+                <img
+                      className="avatar"
+                      src="https://carleton.ca/webservices/wp-content/uploads/sites/3/logo-th.jpg"
+                      alt="Carleton University Logo"   
+                  />  
+              </a>
             </div>
 
           <div className="experience-card"> 
@@ -158,8 +164,7 @@ export default function App() {
                 <li>Support a <strong>student-funded</strong> service providing on campus food assistance and evening safety support to the <strong>Carleton community</strong></li>
                 <li>Assemble and distribute grocery hampers through the <strong>Food Centre</strong>, assisting students facing food insecurity</li>
                 <li>Conduct safe walk escorts through <strong>Foot Patrol</strong>, accompanying students on and off campus to promote safety and well being</li>
-                <li>Contribute to creating a supportive and accessible campus environment through direct peer based assistance</li>
-            </ul>
+              </ul>
           </div>
         </div>
         </section>
@@ -175,7 +180,11 @@ export default function App() {
           </div>
           <h3>Projects</h3>
           <div className="project-grid">
-            <div className="project-card">
+            <a 
+              href="https://github.com/annaesin/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card">
               <div className="project-top">
                 <a
                   href="https://github.com/annaesin/portfolio"
@@ -189,9 +198,14 @@ export default function App() {
               <h4>React Portfolio</h4>
               <p>A clean portfolio built with React + Vite, focused on responsive layout and UI polish.</p>
               <p className="tech-skills">React • JavaScript • Vite</p>
-            </div>
+            </a>
             
-            <div className="project-card">
+            <a 
+              href="https://github.com/annaesin/library-management-system"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card"
+              >
               <div className="project-top">
                 <a
                   href="https://github.com/annaesin/library-management-system"
@@ -205,9 +219,13 @@ export default function App() {
               <h4>Library Book Data Log System</h4>
               <p>A C client server system using TCP/IP sockets to track and log library records.</p>
               <p className="tech-skills">C • TCP/IP • Systems Programming</p>
-            </div>
+            </a>
 
-            <div className="project-card">
+            <a 
+              href="https://github.com/annaesin/scenario-efficiency-system"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card">
               <div className="project-top">
                 <a
                   href="https://github.com/annaesin"
@@ -221,7 +239,7 @@ export default function App() {
               <h4>Scenario Efficiency System</h4>
               <p>A multithreaded C program using threads and mutexes to analyze character efficiency.</p>
               <p className="tech-skills">C • Multithreading • Concurrency</p>
-            </div>
+            </a>
           </div>
         </section>
 
