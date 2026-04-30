@@ -240,6 +240,25 @@ export default function App() {
               <p>A multithreaded C program using threads and mutexes to analyze character efficiency.</p>
               <p className="tech-skills">C • Multithreading • Concurrency</p>
             </a>
+            <a 
+              href="https://github.com/annaesin/scenario-efficiency-system"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card">
+              <div className="project-top">
+                <a
+                  href="https://github.com/annaesin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  <FaGithub />
+                </a>
+              </div>
+              <h4>Nourivia (In Progress)</h4>
+              <p>A platform that helps people find essential support services (food, hygiene products, and basic necessities) based on eligibility and location.</p>
+              <p className="tech-skills">HTML • CSS • JavaScript • Node.js • Express</p>
+            </a>
           </div>
         </section>
 
