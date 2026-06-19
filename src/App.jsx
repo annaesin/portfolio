@@ -6,6 +6,7 @@ import "./App.css";
 import React, { useState, useEffect } from 'react';
 import naviBase from "./assets/navi/original.png";
 import naviEyes from "./assets/navi/eyes.png";
+import naviClosed from "./assets/navi/closed.png";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -422,7 +423,7 @@ export default function App() {
           className="navi-float"
           onClick={() => setShowNaviMenu(!showNaviMenu)}
         >
-          <img src={naviBase} alt="Navi" />
+          <img src={naviClosed} alt="Navi" />
           
         </div>
       )}
