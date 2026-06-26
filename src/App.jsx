@@ -13,6 +13,19 @@ export default function App() {
   const [showPopup , setShowPopup] = useState(false);
   const [showNaviMenu, setShowNaviMenu] = useState(false);
   const [naviTip, setNaviTip] = useState("Hi, I’m Navi 👋 Welcome to Annabel’s portfolio.");
+  const [sectionState, setSectionState] = useState({
+    about: "open",
+    skills: "open",
+    experience: "open",
+    projects: "open"
+  });
+
+  const updateSection = (section, state) => {
+    setSectionState(prev => ({
+      ...prev,
+      [section]: state
+    }));
+  };
 
   const [selectedSkill, setSelectedSkill] = useState(null);
 
@@ -155,83 +168,120 @@ export default function App() {
           <div className="window-bar">
             <span className="window-title">about.exe</span>
             <span className="window-dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
+              <span
+                className="dot red"
+                title="Close"
+                onClick={() => updateSection("about", "closed")}
+              />
+
+              <span
+                className="dot yellow"
+                title="Minimize"
+                onClick={() => updateSection("about", "minimized")}
+              />
+
+              <span
+                className="dot green"
+                title="Restore"
+                onClick={() => updateSection("about", "open")}
+              />
             </span>
           </div>
-          <p>I'm a <strong>Computer Science graduate </strong> from <strong>Carleton University</strong> who enjoys building software that solves practical problems. </p>
-          <p>
-            I have experience developing <strong>ASP.NET</strong> applications, working with <strong>SQL Server</strong> databases,
-            and implementing backend functionality in <strong>C#</strong>. Through internships at the <strong>RCMP</strong> and <strong>Ciena</strong>,
-            I've contributed to internal applications, documentation systems, and tools used across large organizations.           
-          </p>
-          <p>
-            Fun fact: I minored in <strong>Psychology</strong>, which influences how I think about usability, problem solving, and designing technology with people in mind.
-          </p>
-          <p>
-            This portfolio is a live project, so if something looks a little off, I’m probably rebuilding it. 😆
-          </p>
-          <p>
-            Outside of coding, you’ll usually find me at concerts, reading, gaming, or still trying to finish One Piece (seriously, will I ever catch up?).
-          </p>
 
-          <p className="mt-4">
-            📍 <strong>Based in Ottawa.</strong> Always happy to connect.
-          </p>
+          {/* Open */}
+            {sectionState.about === "open" && (
+              <>
+                <p>I'm a <strong>Computer Science graduate </strong> from <strong>Carleton University</strong> who enjoys building software that solves practical problems. </p>
+                <p>
+                  I have experience developing <strong>ASP.NET</strong> applications, working with <strong>SQL Server</strong> databases,
+                  and implementing backend functionality in <strong>C#</strong>. Through internships at the <strong>RCMP</strong> and <strong>Ciena</strong>,
+                  I've contributed to internal applications, documentation systems, and tools used across large organizations.           
+                </p>
+                <p>
+                  Fun fact: I minored in <strong>Psychology</strong>, which influences how I think about usability, problem solving, and designing technology with people in mind.
+                </p>
+                <p>
+                  This portfolio is a live project, so if something looks a little off, I’m probably rebuilding it. 😆
+                </p>
+                <p>
+                  Outside of coding, you’ll usually find me at concerts, reading, gaming, or still trying to finish One Piece (seriously, will I ever catch up?).
+                </p>
 
+                <p className="mt-4">
+                  📍 <strong>Based in Ottawa.</strong> Always happy to connect.
+                </p>
+              </>
+            )}
+            {sectionState.about === "minimized" && (
+              <div className="section-summary">
+                <strong>🎓 About</strong> •
+                Computer Science Graduate • RCMP • Ciena • Minor in Psychology
+              </div>
+            )}
+
+            {sectionState.about === "closed" && (
+              <div className="section-summary">
+                📁 about.exe <span style={{ opacity: 0.7 }}>Window collapsed • Click 🟢 to restore</span>
+              </div>
+            )}
         </section>
 
         <section id="skills" className="content">
           <div className="window-bar">
-            <span className="window-title">toolkit.exe</span>
+            <span className="window-title">skills.exe</span>
             <span className="window-dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
+              <span
+                className="dot red"
+                title="Close"
+                onClick={() => updateSection("skills", "closed")}
+              />
+
+              <span
+                className="dot yellow"
+                title="Minimize"
+                onClick={() => updateSection("skills", "minimized")}
+              />
+
+              <span
+                className="dot green"
+                title="Restore"
+                onClick={() => updateSection("skills", "open")}
+              />
             </span>
           </div>
+          {/* Open */}
+            {sectionState.skills === "open" && (
+              <>
+                <p className="desktop-hint">Click a folder to inspect my dev toolkit.</p>
 
-          {/* <div className="skills-grid">
-            <div className="skills-card">
-              <h4>Backend</h4>
-              <p>C# • ASP.NET • REST APIs • Node.js • Express</p>
-            </div>
+                <div className="desktop-folders">
+                  <button onClick={() => setSelectedSkill("backend")} className="folder-icon">📁<span>Backend</span></button>
+                  <button onClick={() => setSelectedSkill("frontend")} className="folder-icon">📁<span>Frontend</span></button>
+                  <button onClick={() => setSelectedSkill("databases")} className="folder-icon">📁<span>Databases</span></button>
+                  <button onClick={() => setSelectedSkill("tools")} className="folder-icon">📁<span>Tools</span></button>
+                  <button onClick={() => setSelectedSkill("learning")} className="folder-icon">📁<span>Learning</span></button>
+                </div>
 
-            <div className="skills-card">
-              <h4>Frontend</h4>
-              <p>React • JavaScript • HTML • CSS</p>
-            </div>
+                {selectedSkill && (
+                  <div className="skill-popup">
+                    <button className="skill-close" onClick={() => setSelectedSkill(null)}>×</button>
+                    <h4>{skills[selectedSkill].title}</h4>
+                    <p>{skills[selectedSkill].desc}</p>
+                    <p className="skill-items">{skills[selectedSkill].items}</p>
+                  </div>
+                )}
+              </>
+            )}
+            {sectionState.skills === "minimized" && (
+              <div className="section-summary">
+                <strong> ⚙ Tech Stack</strong> •
+                  React • C# • ASP.NET • SQL • Git • +8 more
+              </div>
+            )}
 
-            <div className="skills-card">
-              <h4>Databases</h4>
-              <p> SQL Server • SQLite • Database Design</p>
-            </div>
-            <div className="skills-card">
-              <h4>Tools</h4>
-              <p> Git • GitHub • DevExpress • AEM • DITA XML</p>
-            </div>
-            <div className="skills-card">
-              <h4>Currently Learning</h4>
-              <p> Docker • Azure • CI/CD </p>
-            </div>
-          </div> */}
-          <p className="desktop-hint">Click a folder to inspect my dev toolkit.</p>
-
-            <div className="desktop-folders">
-              <button onClick={() => setSelectedSkill("backend")} className="folder-icon">📁<span>Backend</span></button>
-              <button onClick={() => setSelectedSkill("frontend")} className="folder-icon">📁<span>Frontend</span></button>
-              <button onClick={() => setSelectedSkill("databases")} className="folder-icon">📁<span>Databases</span></button>
-              <button onClick={() => setSelectedSkill("tools")} className="folder-icon">📁<span>Tools</span></button>
-              <button onClick={() => setSelectedSkill("learning")} className="folder-icon">📁<span>Learning</span></button>
-            </div>
-
-            {selectedSkill && (
-              <div className="skill-popup">
-                <button className="skill-close" onClick={() => setSelectedSkill(null)}>×</button>
-                <h4>{skills[selectedSkill].title}</h4>
-                <p>{skills[selectedSkill].desc}</p>
-                <p className="skill-items">{skills[selectedSkill].items}</p>
+            {sectionState.skills === "closed" && (
+              <div className="section-summary">
+                📁 skills.exe <span style={{ opacity: 0.7 }}>Window collapsed • Click 🟢 to restore</span>
               </div>
             )}
         </section>
@@ -240,170 +290,224 @@ export default function App() {
           <div className="window-bar">
             <span className="window-title">experience.exe</span>
             <span className="window-dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
+              <span
+                className="dot red"
+                title="Close"
+                onClick={() => updateSection("experience", "closed")}
+              />
+
+              <span
+                className="dot yellow"
+                title="Minimize"
+                onClick={() => updateSection("experience", "minimized")}
+              />
+
+              <span
+                className="dot green"
+                title="Restore"
+                onClick={() => updateSection("experience", "open")}
+              />
             </span>
           </div>
-          <h3>Work Experience</h3>
-          <div className="experience-grid">
-            <div className="experience-logo">
-              <a href="https://www.ciena.com/" target="_blank" rel="noopener noreferrer">
-                <img
-                      className="avatar"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
-                      alt="Ciena logo"
-                  />  
-              </a>
-            </div>
-            <div className="experience-card">            
-              <h4>Product Content Developer - Ciena </h4>
-              <p className="muted">May 2025 - Dec 2025</p>
-              <ul>
-                <li>Developed structured documentation systems using <strong>DITA XML</strong> and <strong>AEM</strong></li>
-                <li>Transformed product demos into <strong>AI ready</strong> technical guides </li>
-                <li>Managed versioning and publishing workflows across multiple product teams </li>
-                <li>Supported documentation for multiple enterprise software releases</li>
-              </ul>
-            </div>
-            <div className="experience-logo">
-              <a href="https://www.rcmp-grc.gc.ca/en" target="_blank" rel="noopener noreferrer">
-                <img
-                    className="avatar"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg/250px-Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg.png"
-                    alt="RCMP logo"
-                />
-              </a>  
-            </div>
-            <div className="experience-card">           
-              <h4>Software Developer Intern - Royal Canadian Mounted Police</h4>
-              <p className="muted">Sept 2023 - Aug 2024</p>
-              <ul>
-                <li>Built internal <strong>ASP.NET</strong> applications used by operational teams</li>
-                <li>Designed and optimized <strong>SQL Server</strong> databases for secure data management</li>
-                <li>Implemented backend logic in <strong>C#</strong> supporting production level workflows</li>
-                <li>Improved usability using <strong>DevExpress</strong> components</li>
-              </ul>
-            </div>
-          </div>
-          <h3>Volunteer Experience</h3>
-          <div className="experience-grid">
-            <div className="experience-logo">
-              <a href="https://unifiedsupportcentre.ca/" target="_blank" rel="noopener noreferrer">
-                <img
-                      className="avatar"
-                      src="https://carleton.ca/webservices/wp-content/uploads/sites/3/logo-th.jpg"
-                      alt="Carleton University Logo"   
-                  />  
-              </a>
-            </div>
+          {/* Open */}
+            {sectionState.experience === "open" && (
+              <>
+                <h3>Work Experience</h3>
+                <div className="experience-grid">
+                  <div className="experience-logo">
+                    <a href="https://www.ciena.com/" target="_blank" rel="noopener noreferrer">
+                      <img
+                            className="avatar"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
+                            alt="Ciena logo"
+                        />  
+                    </a>
+                  </div>
+                  <div className="experience-card">            
+                    <h4>Product Content Developer - Ciena </h4>
+                    <p className="muted">May 2025 - Dec 2025</p>
+                    <ul>
+                      <li>Developed structured documentation systems using <strong>DITA XML</strong> and <strong>AEM</strong></li>
+                      <li>Transformed product demos into <strong>AI ready</strong> technical guides </li>
+                      <li>Managed versioning and publishing workflows across multiple product teams </li>
+                      <li>Supported documentation for multiple enterprise software releases</li>
+                    </ul>
+                  </div>
+                  <div className="experience-logo">
+                    <a href="https://www.rcmp-grc.gc.ca/en" target="_blank" rel="noopener noreferrer">
+                      <img
+                          className="avatar"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg/250px-Coat_of_arms_of_the_Royal_Canadian_Mounted_Police.svg.png"
+                          alt="RCMP logo"
+                      />
+                    </a>  
+                  </div>
+                  <div className="experience-card">           
+                    <h4>Software Developer Intern - Royal Canadian Mounted Police</h4>
+                    <p className="muted">Sept 2023 - Aug 2024</p>
+                    <ul>
+                      <li>Built internal <strong>ASP.NET</strong> applications used by operational teams</li>
+                      <li>Designed and optimized <strong>SQL Server</strong> databases for secure data management</li>
+                      <li>Implemented backend logic in <strong>C#</strong> supporting production level workflows</li>
+                      <li>Improved usability using <strong>DevExpress</strong> components</li>
+                    </ul>
+                  </div>
+                </div>
+                <h3>Volunteer Experience</h3>
+                <div className="experience-grid">
+                  <div className="experience-logo">
+                    <a href="https://unifiedsupportcentre.ca/" target="_blank" rel="noopener noreferrer">
+                      <img
+                            className="avatar"
+                            src="https://carleton.ca/webservices/wp-content/uploads/sites/3/logo-th.jpg"
+                            alt="Carleton University Logo"   
+                        />  
+                    </a>
+                  </div>
 
-          <div className="experience-card"> 
-              <h4>Unified Support Centre Volunteer - Carleton University Students' Association</h4>
-              <p className="muted">Nov 2022 - Present</p>
-              <ul>
-                <li>Support a <strong>student-funded</strong> service providing on campus food assistance and evening safety support to the <strong>Carleton community</strong></li>
-                <li>Assemble and distribute grocery hampers through the <strong>Food Centre</strong>, assisting students facing food insecurity</li>
-                <li>Conduct safe walk escorts through <strong>Foot Patrol</strong>, accompanying students on and off campus to promote safety and well being</li>
-              </ul>
-          </div>
-        </div>
+                <div className="experience-card"> 
+                    <h4>Unified Support Centre Volunteer - Carleton University Students' Association</h4>
+                    <p className="muted">Nov 2022 - Present</p>
+                    <ul>
+                      <li>Support a <strong>student-funded</strong> service providing on campus food assistance and evening safety support to the <strong>Carleton community</strong></li>
+                      <li>Assemble and distribute grocery hampers through the <strong>Food Centre</strong>, assisting students facing food insecurity</li>
+                      <li>Conduct safe walk escorts through <strong>Foot Patrol</strong>, accompanying students on and off campus to promote safety and well being</li>
+                    </ul>
+                </div>
+              </div>
+              </>
+            )}
+            {sectionState.experience === "minimized" && (
+              <div className="section-summary">
+                <strong>💼 Experience</strong> •
+                  RCMP • Ciena • Unified Support Centre
+              </div>
+            )}
+
+            {sectionState.experience === "closed" && (
+              <div className="section-summary">
+                📁 experience.exe <span style={{ opacity: 0.7 }}>Window collapsed •Click 🟢 to restore</span>
+              </div>
+            )}
         </section>
 
         <section id="projects" className="content">
           <div className="window-bar">
             <span className="window-title">projects.exe</span>
             <span className="window-dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
+              <span className="dot red"  title="Close" onClick={() => updateSection("projects", "closed")} />
+              <span className="dot yellow" title="Minimize" onClick={() => updateSection("projects", "minimized")} />
+              <span className="dot green" title="Restore" onClick={() => updateSection("projects", "open")} />
             </span>
           </div>
-          <h3>Projects</h3>
-          <div className="project-grid">
-            <a 
-              href="https://github.com/annaesin/scenario-efficiency-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card">
-              <div className="project-top">
-                <a
-                  href="https://github.com/annaesin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <h4>Nourivia 🚧</h4>
-              <p>Finding community support shouldn't require digging through dozens of websites.</p>
-              <p>Nourivia helps users discover food assistance programs, hygiene support services, and other essential community resources based on location and eligibility.</p>
-              <p className="tech-skills">React• Node.js • Express</p>
-            </a>
+          {/* Open */}
+            {sectionState.projects === "open" && (
+              <>
+                <h3>Projects</h3>
+                <div className="project-grid">
+                  <a 
+                    href="https://github.com/annaesin/scenario-efficiency-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card">
+                    <div className="project-top">
+                      <a
+                        href="https://github.com/annaesin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <h4>🚧 Featured Project: Nourivia</h4>
+                    <p>A platform that helps people discover food assistance, hygiene support, and other essential community resources based on location and eligibility.</p>
+                    <p><strong>Status:</strong> Currently building</p>
+                    <ul>
+                      <li>Planning the data model</li>
+                      <li>Developing the backend API</li>
+                      <li>Building the frontend UI</li>
+                    </ul>
+                    <p className="tech-skills">React• Node.js • Express</p>
+                  </a>
 
-            <a 
-              href="https://github.com/annaesin/library-management-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card"
-              >
-              <div className="project-top">
-                <a
-                  href="https://github.com/annaesin/library-management-system"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <h4>Library Book Data Log System</h4>
-              <p>A client-server library management system built in C using TCP/IP sockets for communication and record management.</p>
-              <p className="tech-skills">C • TCP/IP • Systems Programming</p>
-            </a>
+                  <a 
+                    href="https://github.com/annaesin/library-management-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card"
+                    >
+                    <div className="project-top">
+                      <a
+                        href="https://github.com/annaesin/library-management-system"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <h4>Library Book Data Log System</h4>
+                    <p>A client-server library management system built in C using TCP/IP sockets for communication and record management.</p>
+                    <p className="tech-skills">C • TCP/IP • Systems Programming</p>
+                  </a>
 
-            <a 
-              href="https://github.com/annaesin/scenario-efficiency-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card">
-              <div className="project-top">
-                <a
-                  href="https://github.com/annaesin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <h4>Scenario Efficiency System</h4>
-              <p>A multithreaded C application that analyzes character efficiency using threads and mutex synchronization.</p>
-              <p className="tech-skills">C • Multithreading • Concurrency</p>
-            </a>
+                  <a 
+                    href="https://github.com/annaesin/scenario-efficiency-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card">
+                    <div className="project-top">
+                      <a
+                        href="https://github.com/annaesin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <h4>Scenario Efficiency System</h4>
+                    <p>A multithreaded C application that analyzes character efficiency using threads and mutex synchronization.</p>
+                    <p className="tech-skills">C • Multithreading • Concurrency</p>
+                  </a>
 
-             <a 
-              href="https://github.com/annaesin/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card">
-              <div className="project-top">
-                <a
-                  href="https://github.com/annaesin/portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <h4>React Portfolio</h4>
-              <p>A personal portfolio built with React and Vite to showcase projects, experience, and technical skills.</p>
-              <p className="tech-skills">React • JavaScript • Vite</p>
-            </a>
+                  <a 
+                    href="https://github.com/annaesin/portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card">
+                    <div className="project-top">
+                      <a
+                        href="https://github.com/annaesin/portfolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <h4>React Portfolio</h4>
+                    <p>A personal portfolio built with React and Vite to showcase projects, experience, and technical skills.</p>
+                    <p className="tech-skills">React • JavaScript • Vite</p>
+                  </a>
 
-          </div>
+                </div>
+              </>
+            )}
+          {/* Minimized */}
+            {sectionState.projects === "minimized" && (
+              <div className="section-summary">
+                <strong>⭐ Projects </strong> •
+                 Nourivia 🚧 • +3 projects
+              </div>
+            )}
+          {/* Closed */}
+            {sectionState.projects === "closed" && (
+              <div className="section-summary">
+                📁 projects.exe <span style={{ opacity: 0.7 }}>Window collapsed • Click 🟢 to restore</span>
+              </div>
+            )}
         </section>
 
       </main>
