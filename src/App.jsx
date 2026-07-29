@@ -62,11 +62,12 @@ export default function App() {
     setShowPopup(true);
     const handleScroll = () => {
     const sections = [
-      { id: "home", tip: "Hi, I’m Navi 👋 Welcome to Annabel’s portfolio." },
-      { id: "about", tip: "Fun fact: Annabel studied Psychology, so she thinks a lot about users and usability." },
-      { id: "skills", tip: "Here’s the tech stack Annabel has been building with lately." },
-      { id: "experience", tip: "This is where Annabel worked on real systems at RCMP and Ciena." },
-      { id: "projects", tip: "Projects are the good stuff. Start with Nourivia 👀" },
+      { id: "home", tip: "Hey! I'm Navi 👋 Think of me as Annabel's tiny inner narrator. I'll point out the cool stuff as you explore." },
+      { id: "about", tip: "This is the 'who am I?' section. Short version: I like solving problems almost as much as I like overthinking them." },
+      { id: "skills", tip: "These are the tools I actually enjoy building with. And yes... the learning list keeps growing." },
+      { id: "experience", tip: "Here's where classroom knowledge met production code... and debugging became a daily hobby." },
+      { id: "projects", tip: "Definitely my favourite section. KitchenAid was built during a hackathon, and somehow caffeine and Gemini AI actually worked together" },
+      { id: "footer", tip: "That's all folks! Thanks for scrolling. If you want to chat, I'm just an email away. 😊" }
     ];
 
     for (const section of sections) {
@@ -314,26 +315,7 @@ export default function App() {
               <>
                 <h3>Work Experience</h3>
                 <div className="experience-grid">
-                  <div className="experience-logo">
-                    <a href="https://www.ciena.com/" target="_blank" rel="noopener noreferrer">
-                      <img
-                            className="avatar"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
-                            alt="Ciena logo"
-                        />  
-                    </a>
-                  </div>
-                  <div className="experience-card">            
-                    <h4>Product Content Developer - Ciena </h4>
-                    <p className="muted">May 2025 - Dec 2025</p>
-                    <ul>
-                      <li>Developed structured documentation systems using <strong>DITA XML</strong> and <strong>AEM</strong></li>
-                      <li>Transformed product demos into <strong>AI ready</strong> technical guides </li>
-                      <li>Managed versioning and publishing workflows across multiple product teams </li>
-                      <li>Supported documentation for multiple enterprise software releases</li>
-                    </ul>
-                  </div>
-                  <div className="experience-logo">
+                <div className="experience-logo">
                     <a href="https://www.rcmp-grc.gc.ca/en" target="_blank" rel="noopener noreferrer">
                       <img
                           className="avatar"
@@ -352,6 +334,26 @@ export default function App() {
                       <li>Improved usability using <strong>DevExpress</strong> components</li>
                     </ul>
                   </div>
+                  <div className="experience-logo">
+                    <a href="https://www.ciena.com/" target="_blank" rel="noopener noreferrer">
+                      <img
+                            className="avatar"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbM5kEgYKYsYulN3CgHfEmjTsn2ph48enZA&s"
+                            alt="Ciena logo"
+                        />  
+                    </a>
+                  </div>
+                  <div className="experience-card">            
+                    <h4>Product Content Developer - Ciena </h4>
+                    <p className="muted">May 2025 - Dec 2025</p>
+                    <ul>
+                      <li>Developed structured documentation systems using <strong>DITA XML</strong> and <strong>AEM</strong></li>
+                      <li>Transformed product demos into <strong>AI-ready</strong> technical guides </li>
+                      <li>Managed versioning and publishing workflows across multiple product teams </li>
+                      <li>Supported documentation for multiple enterprise software releases</li>
+                    </ul>
+                  </div>
+  
                 </div>
                 <h3>Volunteer Experience</h3>
                 <div className="experience-grid">
@@ -406,7 +408,34 @@ export default function App() {
                 <h3>Projects</h3>
                 <div className="project-grid">
                   <a 
-                    href="https://github.com/annaesin/scenario-efficiency-system"
+                    href="https://github.com/AnnaEsin/KitchenAid-Hackathon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card">
+                    
+                    <div className="project-top">
+                      <a
+                        href="https://github.com/AnnaEsin/KitchenAid-Hackathon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+
+                    <h4>KitchenAid - AI Recipe Assistant</h4>
+
+                    <p>
+                      An AI-powered recipe assistant built during cuHacking 7 that generates personalised recipes from available ingredients using Gemini AI and supports voice-guided interaction through ElevenLabs.
+                    </p>
+
+                    <p className="tech-skills">
+                      Next.js • React • Gemini API • MongoDB • ElevenLabs • Pexels API
+                    </p>
+                  </a>
+                  {/* <a 
+                    href=""
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-card">
@@ -429,8 +458,7 @@ export default function App() {
                       <li>Building the frontend UI</li>
                     </ul>
                     <p className="tech-skills">React• Node.js • Express</p>
-                  </a>
-
+                  </a> */}
                   <a 
                     href="https://github.com/annaesin/library-management-system"
                     target="_blank"
@@ -451,27 +479,6 @@ export default function App() {
                     <p>A client-server library management system built in C using TCP/IP sockets for communication and record management.</p>
                     <p className="tech-skills">C • TCP/IP • Systems Programming</p>
                   </a>
-
-                  <a 
-                    href="https://github.com/annaesin/scenario-efficiency-system"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-card">
-                    <div className="project-top">
-                      <a
-                        href="https://github.com/annaesin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        <FaGithub />
-                      </a>
-                    </div>
-                    <h4>Scenario Efficiency System</h4>
-                    <p>A multithreaded C application that analyzes character efficiency using threads and mutex synchronization.</p>
-                    <p className="tech-skills">C • Multithreading • Concurrency</p>
-                  </a>
-
                   <a 
                     href="https://github.com/annaesin/portfolio"
                     target="_blank"
@@ -499,7 +506,7 @@ export default function App() {
             {sectionState.projects === "minimized" && (
               <div className="section-summary">
                 <strong>⭐ Projects </strong> •
-                 Nourivia 🚧 • +3 projects
+                 KitchenAid • +2 more
               </div>
             )}
           {/* Closed */}
