@@ -3,22 +3,23 @@
 A personal portfolio website built with **React and Vite** to showcase my projects, experience, and technical skills.
 
 🔗 Live Site: https://annabelesin.com 
-💻 GitHub: https://github.com/annaesin/portfolio
-
 ---
 
 ## Overview
 
-This is a responsive single-page application designed to present my background, experience, and projects in a clean and structured layout.
+This portfolio is a responsive single-page application that brings together my software development experience, projects, skills, and a little bit of my personality in one place.
+
+I designed and built it from scratch with a focus on keeping the experience simple, responsive, and easy to explore.
 
 ---
 
 ## Features
 
-- Smooth scrolling navigation  
-- Responsive layout for different screen sizes  
-- Project cards with links to GitHub repositories  
-- Organized sections for About, Skills, Experience, and Projects  
+- Responsive design across desktop and mobile
+- Smooth scrolling navigation
+- Project cards with links to GitHub repositories
+- Sections for About, Skills, Experience, and Projects
+- Custom UI elements and animations
 
 ---
 
@@ -62,8 +63,8 @@ Start the development server:
 
 ## Contact
 
-LinkedIn: https://www.linkedin.com/in/annabelesin/
-Email: annabelesin@gmail.com
+Portfolio: annabelesin.com
+LinkedIn: linkedin.com/in/annabelesin
 
 ---
 
