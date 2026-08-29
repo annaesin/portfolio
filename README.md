@@ -2,7 +2,8 @@
 
 A personal portfolio website built with **React and Vite** to showcase my projects, experience, and technical skills.
 
-🔗 Live Site: https://annabelesin.com 
+🔗Live Site : https://www.annabelesin.com/
+
 ---
 
 ## Overview
