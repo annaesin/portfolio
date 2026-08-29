@@ -33,20 +33,6 @@ I designed and built it from scratch with a focus on keeping the experience simp
 
 ---
 
-## Project Structure
-
-The application is organized into sections rendered within a single-page layout:
-
-- `App.jsx` — main layout and section structure  
-- Sections include:
-  - Home  
-  - About 
-  - Skills  
-  - Experience  
-  - Projects  
-
----
-
 ## Getting Started
 
 To run the project locally:
