@@ -165,7 +165,8 @@ export default function App() {
             </h1>
 
             <p className="lead">
-              Software developer with a soft spot for backend, good design, and trying new things.
+              Software developer with a soft spot for backend, 
+              good design, and trying new things.
             </p>
 
             <p className="hero-subtext">

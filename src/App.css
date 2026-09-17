@@ -297,9 +297,9 @@ strong {
 /* HERO SECTION */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.7fr);
+  grid-template-columns: minmax(0, 1fr) 230px;
   align-items: center;
-  gap: 3rem;
+  gap: 50px;
   min-height: 470px;
   padding: 4.5rem 5rem;
   background: #112240;
@@ -313,6 +313,7 @@ strong {
 
 .hero-copy {
   max-width: 720px;
+  min-width: 0;
 }
 
 .hero-eyebrow {
@@ -357,7 +358,7 @@ strong {
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.8rem;
   justify-content: flex-start;
 }
@@ -431,8 +432,8 @@ strong {
 .hero-navi::before {
   content: "";
   position: absolute;
-  width: 230px;
-  height: 230px;
+  width: min(230px, 18vw);
+  aspect-ratio: 1;
   border-radius: 50%;
   background: rgba(143, 191, 163, 0.08);
   filter: blur(10px);
@@ -442,7 +443,7 @@ strong {
 .hero-navi img {
   position: relative;
   z-index: 1;
-  width: min(100%, 260px);
+  width: 190px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.25));
@@ -464,58 +465,136 @@ strong {
 }
 
 /* HERO RESPONSIVE */
-@media (max-width: 900px) {
+/*For minimized browser: */
+@media (max-width: 1100px) {
   .hero {
-    grid-template-columns: 1fr;
-    padding: 3.5rem 3rem;
-    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr) 150px;
+    gap: 2rem;
+
+    /* reduces the giant side padding */
+    padding: 4rem 3rem;
   }
 
   .hero-copy {
-    max-width: 100%;
+    max-width: none;
   }
 
   .hero-navi img {
-    width: 190px;
+    width: 135px;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+  }
+
+  .hero-actions a {
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
   }
 }
 
-@media (max-width: 600px) {
+
+/* For tablets */
+@media (max-width: 800px) {
   .hero {
+    grid-template-columns: minmax(0, 1fr) 115px;
+    gap: 1.25rem;
     min-height: auto;
-    padding: 2.5rem 1.5rem;
-    gap: 2rem;
-    border-radius: 14px;
+    padding: 3.5rem 2rem;
   }
 
-  .hi-intro {
-    font-size: clamp(2.6rem, 13vw, 3.8rem);
+  .hero-navi img {
+    width: 105px;
+  }
+
+  .hero-navi::before {
+    width: 135px;
+  }
+
+  .handmade-note {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .hero-actions {
+    gap: 0.5rem;
+  }
+
+  .hero-actions a {
+    min-height: 42px;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Phone view */
+@media (max-width: 600px) {
+  .hero {
+    display: block;
+
+    min-height: auto;
+    padding: 2.5rem 1.4rem;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero .hi-intro {
+    padding-right: 70px;
+  }
+
+  /*
+    Make Navi smaller and float to the top-right corner, so it doesn't take up too much space on a small screen.
+  */
+  .hero-navi {
+    position: absolute;
+    top: 4.6rem;
+    right: 1.25rem;
+    margin: 0;
+  }
+
+  .hero-navi img {
+    width: 65px;
+  }
+
+  .hero-navi::before {
+    width: 80px;
+  }
+
+  .handmade-note {
+    margin-top: -0.15rem;
+    font-size: 0.55rem;
+    white-space: nowrap;
   }
 
   .hero .lead {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 
   .hero-subtext {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.65;
   }
 
   .hero-meta {
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    gap: 0.7rem;
   }
 
   .hero-actions a {
     width: 100%;
-  }
-
-  .hero-navi img {
-    width: 160px;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
   }
 }
 
