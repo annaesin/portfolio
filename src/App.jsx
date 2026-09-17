@@ -6,6 +6,7 @@ import "./App.css";
 import React, { useState, useEffect } from 'react';
 import naviBase from "./assets/navi/original.png";
 import naviEyes from "./assets/navi/eyes.png";
+import naviBlink from "./assets/navi/blink.png";
 import naviClosed from "./assets/navi/closed.png";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
   const [naviTip, setNaviTip] = useState("Hi, I’m Navi 👋 Welcome to Annabel’s portfolio.");
   const [sectionState, setSectionState] = useState({
     about: "open",
+    currently: "open",
     skills: "open",
     experience: "open",
     projects: "open"
@@ -32,8 +34,14 @@ export default function App() {
   const skills = {
     backend: {
       title: "Backend Development",
-      items: "C# • ASP.NET • REST APIs • Node.js • Express",
+      items: "C# • ASP.NET • REST APIs",
       desc: "Building APIs, backend logic, and server-side applications."
+    },
+
+    learning: {
+      title: "Currently Learning",
+      items: "Python • Node.js • Express • PostgreSQL • AWS • SAP",
+      desc: "Strengthening my backend skills and exploring cloud and enterprise development."
     },
     frontend: {
       title: "Frontend Development",
@@ -62,13 +70,15 @@ export default function App() {
     setShowPopup(true);
     const handleScroll = () => {
     const sections = [
-      { id: "home", tip: "Hey! I'm Navi 👋 Think of me as Annabel's tiny inner narrator. I'll point out the cool stuff as you explore." },
-      { id: "about", tip: "This is the 'who am I?' section. Short version: I like solving problems almost as much as I like overthinking them." },
-      { id: "skills", tip: "These are the tools I actually enjoy building with. And yes... the learning list keeps growing." },
-      { id: "experience", tip: "Here's where classroom knowledge met production code... and debugging became a daily hobby." },
-      { id: "projects", tip: "Definitely my favourite section. KitchenAid was built during a hackathon, and somehow caffeine and Gemini AI actually worked together" },
-      { id: "footer", tip: "That's all folks! Thanks for scrolling. If you want to chat, I'm just an email away. 😊" }
+      { id: "home", tip: "hey, i'm Navi 👋🏾 Annabel's unofficial tour guide. I'll pop in occasionally... promise I won't be annoying." },
+      { id: "about", tip: "okay, here's the lore." },
+      { id: "currently", tip: "here's what I'm up to right now." },
+      { id: "skills", tip: "the Learning folder is permanently under construction." },
+      { id: "experience", tip: "the professional lore. she does in fact have receipts." },
+      { id: "projects", tip: "okayyy, now we're getting to the good stuff." },
+      { id: "footer", tip: "you made it to the end ♡ thanks for snooping around.😊" }
     ];
+    
 
     for (const section of sections) {
       const element = document.getElementById(section.id);
@@ -107,10 +117,14 @@ export default function App() {
             </div>
 
             <div className="navi-popup-text">
-              <h2>Hi, I’m Navi 👋</h2>
+              <h2>hey, I'm Navi 👋🏾</h2>
               <p>
-                Welcome to Annabel’s portfolio. I’m here to help you explore her
-                projects, experience, and resume.
+                short for Navigator, because apparently Annabel thought her
+                portfolio needed a tour guide 😭
+              </p>
+
+              <p>
+                i'll pop in here and there. promise i won't be annoying.
               </p>
 
               <div className="popup-actions">
@@ -142,26 +156,47 @@ export default function App() {
 
       <main className="container">
         <section id="home" className="content hero">
-          <h1 className="hi-intro">
-            Hi, I'm Annabel<span className="typing-cursor">|</span>
-          </h1>
-          
-         <p className="hero-meta">
-            🎓 Computer Science Graduate | 💼 2 Co-op Experiences | 📍 Ottawa, ON
-          </p>
+          <div className="hero-copy">
+            <p className="hero-eyebrow">hello, world 👋🏾</p>
 
-          <p className="lead">
-            Software developer focused on backend and full-stack development.
-          </p>
+            <h1 className="hi-intro">
+              Hi, I'm <span>Annabel.</span>
+              <span className="typing-cursor">|</span>
+            </h1>
 
-          <p className="hero-subtext">
-            I build practical, user-centered applications with C#, ASP.NET, SQL, React, and modern web technologies.
-          </p>               
+            <p className="lead">
+              Software developer with a soft spot for backend, good design, and trying new things.
+            </p>
 
-          <div className="hero-actions">
-            <a className="btn" href="#projects">View projects 🔎︎</a>
-            <a className="btn" href= "/resume.pdf" target="_blank" rel="noopener noreferrer">View My Resume 💼</a>
-            <a className="btn-ghost" href="mailto:annabelesin@gmail.com">✉ Say hi</a>
+            <p className="hero-subtext">
+              I enjoy figuring out how things work and building practical, user centered software across backend and full stack development.
+            </p>
+
+            <p className="hero-meta">
+              📍 Ottawa, ON &nbsp;•&nbsp; 🎓 Computer Science + Psychology
+            </p>
+
+            <div className="hero-actions">
+              <a className="btn" href="#projects">View projects</a>
+
+              <a
+                className="btn-secondary"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View my resume
+              </a>
+
+              <a className="btn-ghost" href="mailto:annabelesin@gmail.com">
+                <FaEnvelope /> Say hi
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-navi">
+            <img src={naviBlink} alt="Navi, an avatar illustrated by Annabel" />
+            <span className="handmade-note">drawn by me ♡</span>
           </div>
         </section>
 
@@ -192,20 +227,29 @@ export default function App() {
           {/* Open */}
             {sectionState.about === "open" && (
               <>
-                <p>I'm a <strong>Computer Science graduate </strong> from <strong>Carleton University</strong> who enjoys building software that solves practical problems. </p>
                 <p>
-                  I have experience developing <strong>ASP.NET</strong> applications, working with <strong>SQL Server</strong> databases,
-                  and implementing backend functionality in <strong>C#</strong>. Through internships at the <strong>RCMP</strong> and <strong>Ciena</strong>,
-                  I've contributed to internal applications, documentation systems, and tools used across large organizations.           
+                  I'm a <strong>Computer Science graduate</strong> from{" "}
+                  <strong>Carleton University</strong> with a minor in{" "}
+                  <strong>Psychology</strong>. I've always been curious about how things
+                  work, which is probably why I ended up in tech. I enjoy solving problems,
+                  building things, and learning as I go.
                 </p>
+
                 <p>
-                  Fun fact: I minored in <strong>Psychology</strong>, which influences how I think about usability, problem solving, and designing technology with people in mind.
+                  I'm especially interested in{" "}
+                  <strong>backend and full stack development</strong>, and lately I've
+                  been working on new projects and exploring different areas of tech
+                  that catch my interest.
                 </p>
+
                 <p>
-                  This portfolio is a live project, so if something looks a little off, I’m probably rebuilding it. 😆
+                  Outside of coding, I'm probably at the <strong>gym</strong>, at a{" "}
+                  <strong>concert</strong>, reading, playing my Switch, or still trying
+                  to catch up on <strong>One Piece</strong> 😭
                 </p>
-                <p>
-                  Outside of coding, you’ll usually find me at concerts, reading, gaming, or still trying to finish One Piece (seriously, will I ever catch up?).
+
+                 <p className="about-note">
+                  I’m always learning or trying something new, and this portfolio changes with me. So if something looks different next time you’re here... I was probably messing with it ♡
                 </p>
 
                 <p className="mt-4">
@@ -225,6 +269,72 @@ export default function App() {
                 📁 about.exe <span style={{ opacity: 0.7 }}>Window collapsed • Click 🟢 to restore</span>
               </div>
             )}
+        </section>
+
+        <section id="currently" className="content currently-window">
+          <div className="window-bar">
+            <span className="window-title">currently.exe</span>
+
+            <span className="window-dots">
+              <span
+                className="dot red"
+                title="Close"
+                onClick={() => updateSection("currently", "closed")}
+              />
+              <span
+                className="dot yellow"
+                title="Minimize"
+                onClick={() => updateSection("currently", "minimized")}
+              />
+              <span
+                className="dot green"
+                title="Restore"
+                onClick={() => updateSection("currently", "open")}
+              />
+            </span>
+          </div>
+
+          {sectionState.currently === "open" && (
+            <div className="currently-grid">
+
+              <div className="currently-card">
+                <span className="currently-label">💻 BUILDING</span>
+                <p>Building my backend skills + working on my next project</p>
+              </div>
+
+              <div className="currently-card">
+                <span className="currently-label">📚 LEARNING</span>
+                <p>Python • AWS • SAP</p>
+              </div>
+
+              <div className="currently-card">
+                <span className="currently-label">📖 READING</span>
+                <p>Yinka, Where Is Your Husband?</p>
+              </div>
+
+              <div className="currently-card">
+                <span className="currently-label">🎧 ON REPEAT</span>
+                <p>Hadestown + EPIC 🎭</p>
+                <small>Broadway musicals, always</small>
+              </div>
+
+            </div>
+          )}       
+
+          {sectionState.currently === "minimized" && (
+            <div className="section-summary">
+              <strong>✨ Currently</strong> • Python • AWS • SAP • reading • creating
+            </div>
+          )}
+
+          {sectionState.currently === "closed" && (
+            <div className="section-summary">
+              📁 currently.exe{" "}
+              <span style={{ opacity: 0.7 }}>
+                Window collapsed • Click 🟢 to restore
+              </span>
+            </div>
+          )}
         </section>
 
         <section id="skills" className="content">
@@ -251,28 +361,72 @@ export default function App() {
             </span>
           </div>
           {/* Open */}
-            {sectionState.skills === "open" && (
-              <>
-                <p className="desktop-hint">Click a folder to inspect my dev toolkit.</p>
+          {sectionState.skills === "open" && (
+            <>
+              <p className="desktop-hint">
+                Click a folder to inspect my dev toolkit.
+              </p>
 
-                <div className="desktop-folders">
-                  <button onClick={() => setSelectedSkill("backend")} className="folder-icon">📁<span>Backend</span></button>
-                  <button onClick={() => setSelectedSkill("frontend")} className="folder-icon">📁<span>Frontend</span></button>
-                  <button onClick={() => setSelectedSkill("databases")} className="folder-icon">📁<span>Databases</span></button>
-                  <button onClick={() => setSelectedSkill("tools")} className="folder-icon">📁<span>Tools</span></button>
-                  <button onClick={() => setSelectedSkill("learning")} className="folder-icon">📁<span>Learning</span></button>
+              <div className="desktop-folders">
+                <button
+                  onClick={() => setSelectedSkill("backend")}
+                  className="folder-icon"
+                >
+                  📁
+                  <span>Backend</span>
+                </button>
+
+                <button
+                  onClick={() => setSelectedSkill("frontend")}
+                  className="folder-icon"
+                >
+                  📁
+                  <span>Frontend</span>
+                </button>
+
+                <button
+                  onClick={() => setSelectedSkill("databases")}
+                  className="folder-icon"
+                >
+                  📁
+                  <span>Databases</span>
+                </button>
+
+                <button
+                  onClick={() => setSelectedSkill("tools")}
+                  className="folder-icon"
+                >
+                  📁
+                  <span>Tools</span>
+                </button>
+
+                <button
+                  onClick={() => setSelectedSkill("learning")}
+                  className="folder-icon"
+                >
+                  📁
+                  <span>Learning</span>
+                </button>
+              </div>
+
+              {selectedSkill && (
+                <div className="skill-popup">
+                  <button
+                    className="skill-close"
+                    onClick={() => setSelectedSkill(null)}
+                  >
+                    ×
+                  </button>
+
+                  <h4>{skills[selectedSkill].title}</h4>
+                  <p>{skills[selectedSkill].desc}</p>
+                  <p className="skill-items">
+                    {skills[selectedSkill].items}
+                  </p>
                 </div>
-
-                {selectedSkill && (
-                  <div className="skill-popup">
-                    <button className="skill-close" onClick={() => setSelectedSkill(null)}>×</button>
-                    <h4>{skills[selectedSkill].title}</h4>
-                    <p>{skills[selectedSkill].desc}</p>
-                    <p className="skill-items">{skills[selectedSkill].items}</p>
-                  </div>
-                )}
-              </>
-            )}
+              )}
+            </>
+          )}
             {sectionState.skills === "minimized" && (
               <div className="section-summary">
                 <strong> ⚙ Tech Stack</strong> •
@@ -371,7 +525,7 @@ export default function App() {
                     <h4>Unified Support Centre Volunteer - Carleton University Students' Association</h4>
                     <p className="muted">Nov 2022 - Present</p>
                     <ul>
-                      <li>Support a <strong>student-funded</strong> service providing on campus food assistance and evening safety support to the <strong>Carleton community</strong></li>
+                      <li>Support a student funded service providing on campus food assistance and evening safety support to the Carleton community</li>
                       <li>Assemble and distribute grocery hampers through the <strong>Food Centre</strong>, assisting students facing food insecurity</li>
                       <li>Conduct safe walk escorts through <strong>Foot Patrol</strong>, accompanying students on and off campus to promote safety and well being</li>
                     </ul>
