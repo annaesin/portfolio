@@ -310,7 +310,7 @@ export default function App() {
 
               <div className="currently-card">
                 <span className="currently-label">📖 READING</span>
-                <p>Yinka, Where Is Your Husband?</p>
+                <p>Dungeon Crawler Carl</p>
               </div>
 
               <div className="currently-card">
@@ -480,7 +480,7 @@ export default function App() {
                     </a>  
                   </div>
                   <div className="experience-card">           
-                    <h4>Software Developer Intern - Royal Canadian Mounted Police</h4>
+                    <h4>Web Developer - Royal Canadian Mounted Police</h4>
                     <p className="muted">Sept 2023 - Aug 2024</p>
                     <ul>
                       <li>Built internal <strong>ASP.NET</strong> applications used by operational teams</li>
